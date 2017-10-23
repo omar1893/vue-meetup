@@ -1,5 +1,5 @@
 <template>
-  <v-app light>
+  <v-app>
 
     <v-navigation-drawer temporary v-model="sideNav">
       <v-list>
@@ -27,7 +27,7 @@
     </v-toolbar>
 
     <main>
-      <router-view></router-view>, link: '' 
+      <router-view></router-view>
     </main>
 
   </v-app>
