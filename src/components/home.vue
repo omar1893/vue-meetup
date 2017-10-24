@@ -11,25 +11,43 @@
     <v-layout row wrap>
       <v-flex xs12>
         <v-carousel>
-          <v-carousel-item v-for="(item,i) in items" v-bind:src="item.src" :key="i"></v-carousel-item>
+          <v-carousel-item v-for="meetup in meetups" v-bind:src="meetup.imageUrl" :key="meetup.id">
+          <div class="carousel-title">
+            {{meetup.title}}
+          </div>
+          </v-carousel-item>
         </v-carousel>
       </v-flex>
     </v-layout>
   </v-container>
 </template >
 
-  <script>
-    export default {
-      name: 'home',
-  data () {
+<script>
+export default {
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+      meetups: [
+        {
+          imageUrl: "https://media.timeout.com/images/103444978/image.jpg",
+          id: "udduhda",
+          title: "Meetup in New york"
+        },
+        {
+          imageUrl:
+            "http://www.hiltonhotels.com/assets/img/destinations/Spanish/Brazil/brazil-03.jpg",
+          id: "udkhjhbgduhda",
+          title: "Meetup in Sao Paulo"
+        }
+      ]
+    };
   }
-}
+};
 </script>
 
   <!--Add "scoped" attribute to limit CSS to this component only -- >
-    <style scoped>
-
-    </style>
+<style scoped lang="css">
+    .carousel-title{
+      position: absolute;
+      bottom: 50px
+}      
+</style>

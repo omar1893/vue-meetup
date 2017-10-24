@@ -51,6 +51,6 @@
 
 </script>
 
-<style lang="stylus">
+<style scope lang="stylus">
   @import './stylus/main'
 </style>
