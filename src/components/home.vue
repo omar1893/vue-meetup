@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-layout row wrap>
+    <v-layout row wrap class="mb-2">
       <v-flex xs12 sm6 class="text-xs-center text-sm-right">
         <v-btn large router class="error" to="/meetups">Explore Meetups</v-btn>
       </v-flex>
@@ -45,9 +45,11 @@ export default {
 </script>
 
   <!--Add "scoped" attribute to limit CSS to this component only -- >
-<style scoped lang="css">
+<style scoped>
     .carousel-title{
       position: absolute;
-      bottom: 50px
+      bottom: 50px;
+      background-color: rgba(0,0,0,0.5);
+      color: white;
 }      
 </style>

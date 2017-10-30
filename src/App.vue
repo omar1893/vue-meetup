@@ -51,6 +51,15 @@
 
 </script>
 
-<style scope lang="stylus">
-  @import './stylus/main'
+<style scoped lang="stylus">
+  @import './stylus/main';
+
+  .carousel-title{
+      position: absolute;
+      bottom: 50px;
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      font-size: 2em;
+      padding: 20px;
+}      
 </style>
