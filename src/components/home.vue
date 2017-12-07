@@ -11,7 +11,7 @@
     <v-layout row wrap>
       <v-flex xs12>
         <v-carousel>
-          <v-carousel-item v-for="meetup in meetups" v-bind:src="meetup.imageUrl" :key="meetup.id">
+          <v-carousel-item v-for="meetup in meetups" v-bind:src="meetup.imageUrl" :key="meetup.id" @click="onLoadMeetup(meetup.id)">
           <div class="carousel-title">
             {{meetup.title}}
           </div>
@@ -24,28 +24,21 @@
 
 <script>
 export default {
-  data() {
-    return {
-      meetups: [
-        {
-          imageUrl: "https://media.timeout.com/images/103444978/image.jpg",
-          id: "udduhda",
-          title: "Meetup in New york"
-        },
-        {
-          imageUrl:
-            "http://www.hiltonhotels.com/assets/img/destinations/Spanish/Brazil/brazil-03.jpg",
-          id: "udkhjhbgduhda",
-          title: "Meetup in Sao Paulo"
-        }
-      ]
-    };
+  computed: {
+    meetups(){
+      return this.$store.getters.featuredMeetups
+    }
+  },
+  methods:{
+    onLoadMeetup(id){
+      this.$router.push('/meetups/'+id)
+    }
   }
 };
 </script>
 
   <!--Add "scoped" attribute to limit CSS to this component only -- >
-<style scoped>
+<style>
     .carousel-title{
       position: absolute;
       bottom: 50px;
